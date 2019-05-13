@@ -33,6 +33,15 @@ app.post("/register", (req, res) => {
     })
 });
 
+app.get("/gate", (req, res) => {
+    let angle = req.query.angle
+
+    const spawn = require('child_process').spawn
+    const process = spawn('python', ["servo.py", angle]);
+
+    res.send("OK")
+})
+
 app.listen(8000, ()=> {
     console.log("Servier is listernign")
 })
