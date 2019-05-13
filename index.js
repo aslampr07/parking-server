@@ -37,7 +37,7 @@ app.get("/gate", (req, res) => {
     let angle = req.query.angle
 
     const spawn = require('child_process').spawn
-    const process = spawn('python', ["servo.py", angle]);
+    const process = spawn('python', ["servo.py"]);
 
     res.send("OK")
 })
