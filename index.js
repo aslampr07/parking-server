@@ -39,7 +39,7 @@ app.get("/gate", (req, res) => {
     const spawn = require('child_process').spawn
     const process = spawn('python', ["servo.py"]);
 
-    res.send("OK")
+    res.redirect("http://192.168.0.14/gate.html")
 })
 
 app.listen(8000, ()=> {
